@@ -31,14 +31,15 @@ public class Usuario {
     }
     
     public boolean login(String x, String y, String z){
-        Boolean permiso=true;
+        Boolean permiso=false;
         Scanner sc=null;
         try {
             if (archivo.exists()) {
                 sc = new Scanner(archivo);
                 sc.useDelimiter(";");
                 while (sc.hasNext()) {
-                    if (x.equals(sc.next())&&y.equals(sc.nextInt())&&z.equals(sc.next())) {
+                       
+                    if (x.equals(sc.next())&&y.equals(sc.next())&&z.equals(sc.next())) {
                         permiso=true;
                     }
                 }

@@ -6,7 +6,10 @@
 package lab6_franciscopagoaga;
 
 import java.io.File;
+import java.util.Scanner;
 import javax.swing.JOptionPane;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
 
 /**
  *
@@ -59,7 +62,13 @@ public class Menu extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTree1 = new javax.swing.JTree();
+        arbol = new javax.swing.JTree();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
         agregarserie = new javax.swing.JDialog();
         jPanel3 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
@@ -262,17 +271,17 @@ public class Menu extends javax.swing.JFrame {
 
         javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Nesflis");
         javax.swing.tree.DefaultMutableTreeNode treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Peliculas");
-        javax.swing.tree.DefaultMutableTreeNode treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Suspenso");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Terror");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Accion");
+        javax.swing.tree.DefaultMutableTreeNode treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Accion");
         treeNode2.add(treeNode3);
         treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Romanticas");
         treeNode2.add(treeNode3);
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Suspenso");
+        treeNode2.add(treeNode3);
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Terror");
+        treeNode2.add(treeNode3);
         treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Ciencia Ficcion");
         treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Animacino");
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Animacion");
         treeNode2.add(treeNode3);
         treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Fantasia");
         treeNode2.add(treeNode3);
@@ -289,30 +298,84 @@ public class Menu extends javax.swing.JFrame {
         treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("YYYY");
         treeNode2.add(treeNode3);
         treeNode1.add(treeNode2);
-        jTree1.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
-        jScrollPane1.setViewportView(jTree1);
+        arbol.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        jScrollPane1.setViewportView(arbol);
+
+        jButton5.setText("Eliminar Pelicula");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
+        jButton6.setText("Eliminar Serie");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
+        jButton7.setText("Reload");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+
+        jButton8.setText("LogOut");
+        jButton8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton8MouseClicked(evt);
+            }
+        });
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane2.setViewportView(jTextArea1);
 
         javax.swing.GroupLayout loggedinLayout = new javax.swing.GroupLayout(loggedin.getContentPane());
         loggedin.getContentPane().setLayout(loggedinLayout);
         loggedinLayout.setHorizontalGroup(
             loggedinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loggedinLayout.createSequentialGroup()
+            .addGroup(loggedinLayout.createSequentialGroup()
                 .addGap(41, 41, 41)
-                .addComponent(jButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
-                .addComponent(jButton3)
+                .addGroup(loggedinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(loggedinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(45, 45, 45))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loggedinLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(149, 149, 149))
+                .addGroup(loggedinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(151, 151, 151)
+                .addComponent(jButton8)
+                .addContainerGap())
+            .addGroup(loggedinLayout.createSequentialGroup()
+                .addGap(97, 97, 97)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(133, Short.MAX_VALUE))
         );
         loggedinLayout.setVerticalGroup(
             loggedinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loggedinLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
+                .addGroup(loggedinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton8))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addGroup(loggedinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton5)
+                    .addComponent(jButton6))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(loggedinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton3)
                     .addComponent(jButton2))
@@ -541,6 +604,7 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void LogInMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogInMouseClicked
+        login.login(usuario.getText(), codigo.getText(), psswd.getText());
         if (login.login(usuario.getText(), codigo.getText(), psswd.getText()) == true) {
             JOptionPane.showMessageDialog(this, "Ha iniciado sesion correctamente");
             this.setVisible(false);
@@ -570,9 +634,9 @@ public class Menu extends javax.swing.JFrame {
             ap.getPeliculas().add(new Peliculas(nombrepeli.getText(), Integer.parseInt(duracion.getText()), ((String) categorias.getSelectedItem()), director.getText(), productora.getText(), ((String) idiomas.getSelectedItem()), x, y, actores.getText()));
             ap.escribirArchivo();
             ap.cargarArchivo();
-            JOptionPane.showMessageDialog(agregarpeli,"Se ha agregado exitosamente");
+            JOptionPane.showMessageDialog(agregarpeli, "Se ha agregado exitosamente");
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(agregarpeli,"Ha sucedido un error y no se agrego");
+            JOptionPane.showMessageDialog(agregarpeli, "Ha sucedido un error y no se agrego");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -584,23 +648,23 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2MouseClicked
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        
+
         try {
-            String x="",y="";
+            String x = "", y = "";
             if (rb5.isSelected()) {
-                x="Si";
-            }else if (rb6.isSelected()) {
-                x="No";
+                x = "Si";
+            } else if (rb6.isSelected()) {
+                x = "No";
             }
             if (rb7.isSelected()) {
-                y="Si";
-            }else if (rb8.isSelected()) {
-                y="No";
+                y = "Si";
+            } else if (rb8.isSelected()) {
+                y = "No";
             }
-            as.getSeries().add(new Series(nombre1.getText(),Integer.parseInt(duracion1.getText()),((String) categorias1.getSelectedItem()),Integer.parseInt(temporadas.getText()),productora1.getText(),((String) idiomas1.getSelectedItem()),x,y,actores.getText()));
+            as.getSeries().add(new Series(nombre1.getText(), Integer.parseInt(duracion1.getText()), ((String) categorias1.getSelectedItem()), Integer.parseInt(temporadas.getText()), productora1.getText(), ((String) idiomas1.getSelectedItem()), x, y, actores.getText()));
             as.escribirArchivo();
             as.cargarArchivo();
-            JOptionPane.showMessageDialog(agregarserie,"Se ha agregado exitosamente");
+            JOptionPane.showMessageDialog(agregarserie, "Se ha agregado exitosamente");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(agregarserie, "Sucedio un error");
         }
@@ -612,6 +676,83 @@ public class Menu extends javax.swing.JFrame {
         agregarserie.setLocationRelativeTo(loggedin);
         agregarserie.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        int a = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la posicion de la pelicula que quiere borrar"));
+        System.out.println(a);
+        ap.cargarArchivo();
+        try {
+            ap.getPeliculas().remove(a);
+            JOptionPane.showMessageDialog(loggedin, "Pelicula eliminada");
+            ap.escribirArchivo();
+            ap.cargarArchivo();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(loggedin, "Sucedio un error");
+        }
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        Scanner input=new Scanner(System.in);
+        int a = input.nextInt();
+        as.cargarArchivo();
+        try {
+            as.getSeries().remove(a);
+            JOptionPane.showMessageDialog(loggedin, "Pelicula eliminada");
+            as.escribirArchivo();
+            as.cargarArchivo();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(loggedin, "Sucedio un error");
+        }
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        DefaultTreeModel a = (DefaultTreeModel) arbol.getModel();
+        ap.cargarArchivo();
+        as.cargarArchivo();
+        DefaultMutableTreeNode ruta = (DefaultMutableTreeNode) a.getRoot();
+        for (Peliculas e : ap.getPeliculas()) {
+            DefaultMutableTreeNode base = new DefaultMutableTreeNode(e.getNombre());
+            if (e.getCategoria().equals("Accion")) {
+                ((DefaultMutableTreeNode) ruta.getChildAt(0).getChildAt(0)).add(base);
+            } else if (e.getCategoria().equals("Romanticas")) {
+                ((DefaultMutableTreeNode) ruta.getChildAt(0).getChildAt(1)).add(base);
+            } else if (e.getCategoria().equals("Suspenso")) {
+                ((DefaultMutableTreeNode) ruta.getChildAt(0).getChildAt(2)).add(base);
+            }else if (e.getCategoria().equals("Terror")) {
+                ((DefaultMutableTreeNode) ruta.getChildAt(0).getChildAt(3)).add(base);
+            }else if (e.getCategoria().equals("Ciencia Ficcion")) {
+                ((DefaultMutableTreeNode) ruta.getChildAt(0).getChildAt(4)).add(base);
+            }else if (e.getCategoria().equals("Animacion")) {
+                ((DefaultMutableTreeNode) ruta.getChildAt(0).getChildAt(5)).add(base);
+            }else if (e.getCategoria().equals("Fantasia")) {
+                ((DefaultMutableTreeNode) ruta.getChildAt(0).getChildAt(6)).add(base);
+            }
+        }
+        for (Series e : as.getSeries()) {
+            DefaultMutableTreeNode base = new DefaultMutableTreeNode(e.getNombre());
+             if (e.getCategorias().equals("Sitcom")) {
+                ((DefaultMutableTreeNode) ruta.getChildAt(1).getChildAt(0)).add(base);
+            }
+            if (e.getCategorias().equals("Drama")) {
+                ((DefaultMutableTreeNode) ruta.getChildAt(1).getChildAt(1)).add(base);
+            }
+            if (e.getCategorias().equals("Novelas")) {
+                ((DefaultMutableTreeNode) ruta.getChildAt(1).getChildAt(2)).add(base);
+            }
+            if (e.getCategorias().equals("Suspenso")) {
+                ((DefaultMutableTreeNode) ruta.getChildAt(1).getChildAt(3)).add(base);
+            }
+            if (e.getCategorias().equals("YYYY")) {
+                ((DefaultMutableTreeNode) ruta.getChildAt(1).getChildAt(4)).add(base);
+            }
+        }
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton8MouseClicked
+        // TODO add your handling code here:
+        this.setVisible(true);
+        loggedin.dispose();
+    }//GEN-LAST:event_jButton8MouseClicked
 
     /**
      * @param args the command line arguments
@@ -654,6 +795,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JTextField actores1;
     private javax.swing.JDialog agregarpeli;
     private javax.swing.JDialog agregarserie;
+    private javax.swing.JTree arbol;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JComboBox<String> categorias;
@@ -669,6 +811,10 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -694,7 +840,8 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTree jTree1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JDialog loggedin;
     private javax.swing.JTextField nombre1;
     private javax.swing.JTextField nombrepeli;

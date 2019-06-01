@@ -1,10 +1,34 @@
-asd;.;123;Suspenso;asd;asd;Espaniol;Si;Si;
-asd;asd.;123;Suspenso;asd;asd;Espaniol;Si;Si;
-asd;asd.;213;Suspenso;asd;asd;Espaniol;Si;Si;
-asd;asd.;213;Suspenso;asd;asd;Espaniol;Si;Si;
-asd;asd.;213;Suspenso;asd;asd;Espaniol;Si;Si;
-asd;asd.;213;Suspenso;asd;asd;Espaniol;Si;Si;
-asd;asd.;213;Suspenso;asd;asd;Espaniol;Si;Si;
-asd;asd.;213;Suspenso;asd;asd;Espaniol;Si;Si;
-asd;asd.;213;Suspenso;asd;asd;Espaniol;Si;Si;
-asd;asd.;213;Suspenso;asd;asd;Espaniol;Si;Si;
+Shrek;Benjamin.;123;Suspenso;asd;asd;Espaniol;Si;Si;
+Shrek;Benjamin.;123;Suspenso;asd;asd;Espaniol;Si;Si;
+Shrek;Benjamin.;213;Suspenso;asd;asd;Espaniol;Si;Si;
+Shrek;Benjamin.;213;Terror;asd;asd;Espaniol;Si;Si;
+Shrek;Benjamin.;213;Terror;asd;asd;Espaniol;Si;Si;
+Shrek;Benjamin.;213;Terror;asd;asd;Espaniol;Si;Si;
+Shrek;Benjamin.;213;Accion;asd;asd;Espaniol;Si;Si;
+Shrek;Benjamin.;213;Accion;asd;asd;Espaniol;Si;Si;
+Shrek;Benjamin.;213;Accion;asd;asd;Espaniol;Si;Si;
+Shrek;Benjamin.;213;Romanticas;asd;asd;Espaniol;Si;Si;
+
+Shrek;Benjamin.;213;Romanticas;asd;asd;Espaniol;Si;Si;
+
+Shrek;Benjamin.;213;Romanticas;asd;asd;Espaniol;Si;Si;
+
+Shrek;Benjamin.;213;Ciencia Ficcion;asd;asd;Espaniol;Si;Si;
+
+Shrek;Benjamin.;213;Ciencia Ficcion;asd;asd;Espaniol;Si;Si;
+
+Shrek;Benjamin.;213;Ciencia Ficcion;asd;asd;Espaniol;Si;Si;
+
+Shrek;Benjamin.;213;Animacion;asd;asd;Espaniol;Si;Si;
+
+Shrek;Benjamin.;213;Animacion;asd;asd;Espaniol;Si;Si;
+
+Shrek;Benjamin.;213;Animacion;asd;asd;Espaniol;Si;Si;
+
+Shrek;Benjamin.;213;Fantasia;asd;asd;Espaniol;Si;Si;
+
+Shrek;Benjamin.;213;Fantasia;asd;asd;Espaniol;Si;Si;
+
+Shrek;Benjamin.;213;Fantasia;asd;asd;Espaniol;Si;Si;
+Shrek;.;123;Suspenso;asd;asd;Espaniol;Si;Si;
+asd;asd.;213;Suspenso;asd;ads;Espaniol;Si;Si;

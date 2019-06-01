@@ -70,10 +70,8 @@ public class administrarseries {
                     String t=sc.next();
                     sa=new Scanner(sc.next());
                     sa.useDelimiter(".");
+                    series.add(new Series(t,sc.nextInt(),sc.next(),sc.nextInt(),sc.next(),sc.next(),sc.next(),sc.next(),sa.next()));
                     
-                    while (sc.hasNext()) {
-                        series.add(new Series(t,sc.nextInt(),sc.next(),sc.nextInt(),sc.next(),sc.next(),sc.next(),sc.next(),sa.next()));
-                    }
                 }
             } catch (Exception e) {
             }
